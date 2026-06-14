@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni-Student Interaction Portal</title>
+    <link rel="stylesheet" href="portal-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Landing Page -->
+    <div class="landing-page" id="landingPage">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="alumni-portal-landing.html" class="logo" aria-label="AlumniConnect Home">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>AlumniConnect</span>
+                </a>
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#benefits">Benefits</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <button class="btn-outline" onclick="showLogin()">Login</button>
+                    <button class="btn-primary" onclick="showRegister()">Register</button>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <span class="hero-badge"><i class="fas fa-star"></i> Trusted by 10,000+ alumni worldwide</span>
+                <h1 class="hero-title">Connect, Learn, Grow with Alumni Network</h1>
+                <p class="hero-subtitle">Bridge the gap between students and alumni for mentorship, career guidance, and endless opportunities</p>
+                <div class="hero-buttons">
+                    <button class="btn-large btn-primary" onclick="showRegister()">Get Started Free</button>
+                    <button class="btn-large btn-outline" onclick="showLogin()">Sign In</button>
+                </div>
+                <div class="trust-bar">
+                    <div class="trust-item"><i class="fas fa-shield-alt"></i> <span><strong>Secure</strong> & Private</span></div>
+                    <div class="trust-item"><i class="fas fa-users"></i> <span><strong>10K+</strong> Alumni</span></div>
+                    <div class="trust-item"><i class="fas fa-briefcase"></i> <span><strong>500+</strong> Jobs</span></div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-card card-1">
+                    <i class="fas fa-users"></i>
+                    <span>10,000+ Alumni</span>
+                </div>
+                <div class="floating-card card-2">
+                    <i class="fas fa-briefcase"></i>
+                    <span>500+ Job Posts</span>
+                </div>
+                <div class="floating-card card-3">
+                    <i class="fas fa-comments"></i>
+                    <span>Active Community</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+            <div class="container">
+                <span class="section-eyebrow reveal">About Us</span>
+                <h2 class="section-title reveal">About the Platform</h2>
+                <p class="section-subtitle reveal">A comprehensive platform designed to foster meaningful connections between current students and successful alumni</p>
+                <div class="about-grid">
+                    <div class="about-card reveal reveal-delay-1">
+                        <div class="about-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Mentorship Programs</h3>
+                        <p>Connect with experienced alumni who can guide you through your academic and career journey</p>
+                    </div>
+                    <div class="about-card reveal reveal-delay-2">
+                        <div class="about-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3>Professional Networking</h3>
+                        <p>Build valuable connections that can open doors to internships and job opportunities</p>
+                    </div>
+                    <div class="about-card reveal reveal-delay-3">
+                        <div class="about-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Knowledge Sharing</h3>
+                        <p>Access insights, experiences, and advice from alumni across various industries</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits-section" id="benefits">
+            <div class="container">
+                <span class="section-eyebrow reveal">Benefits</span>
+                <h2 class="section-title reveal">Why Join AlumniConnect?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card reveal reveal-delay-1">
+                        <div class="benefit-number">01</div>
+                        <h3>Career Guidance</h3>
+                        <p>Get personalized career advice from alumni working in your field of interest</p>
+                    </div>
+                    <div class="benefit-card reveal reveal-delay-2">
+                        <div class="benefit-number">02</div>
+                        <h3>Job Opportunities</h3>
+                        <p>Access exclusive job postings and internship opportunities shared by alumni</p>
+                    </div>
+                    <div class="benefit-card reveal reveal-delay-3">
+                        <div class="benefit-number">03</div>
+                        <h3>Skill Development</h3>
+                        <p>Learn industry-relevant skills through mentorship sessions and workshops</p>
+                    </div>
+                    <div class="benefit-card reveal">
+                        <div class="benefit-number">04</div>
+                        <h3>Community Support</h3>
+                        <p>Join a supportive community of students and alumni helping each other succeed</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section" id="testimonials">
+            <div class="container">
+                <span class="section-eyebrow reveal">Testimonials</span>
+                <h2 class="section-title reveal">What Our Community Says</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card reveal reveal-delay-1">
+                        <div class="testimonial-header">
+                            <img src="https://ui-avatars.com/api/?name=Sarah+Johnson&background=6366f1&color=fff" alt="Sarah">
+                            <div>
+                                <h4>Sarah Johnson</h4>
+                                <p>Computer Science Student</p>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"This platform helped me connect with an amazing mentor who guided me through my internship search. I landed my dream job!"</p>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-card reveal reveal-delay-2">
+                        <div class="testimonial-header">
+                            <img src="https://ui-avatars.com/api/?name=Michael+Chen&background=8b5cf6&color=fff" alt="Michael">
+                            <div>
+                                <h4>Michael Chen</h4>
+                                <p>Alumni - Software Engineer at Google</p>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Being able to give back to my alma mater and help students navigate their careers has been incredibly rewarding."</p>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-card reveal reveal-delay-3">
+                        <div class="testimonial-header">
+                            <img src="https://ui-avatars.com/api/?name=Emily+Davis&background=06b6d4&color=fff" alt="Emily">
+                            <div>
+                                <h4>Emily Davis</h4>
+                                <p>Business Student</p>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"The discussion forum is amazing! I got answers to all my career questions from experienced professionals."</p>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <div class="logo">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>AlumniConnect</span>
+                        </div>
+                        <p>Connecting students with alumni for a brighter future</p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <a href="#about">About</a>
+                        <a href="#benefits">Benefits</a>
+                        <a href="#testimonials">Testimonials</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Contact</h4>
+                        <p><i class="fas fa-envelope"></i> info@alumniconnect.edu</p>
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 AlumniConnect. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="portal-script.js"></script>
+</body>
+</html>

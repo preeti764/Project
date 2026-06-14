@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Dashboard - AlumniConnect</title>
+    <link rel="stylesheet" href="portal-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body data-dashboard="alumni">
+    <div class="dashboard-layout">
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <a href="alumni-portal-landing.html" class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>AlumniConnect</span>
+                </a>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="active" data-section="overview"><i class="fas fa-home"></i> Overview</a>
+                <a href="#" data-section="post-job"><i class="fas fa-plus-circle"></i> Post a Job</a>
+                <a href="#" data-section="requests"><i class="fas fa-inbox"></i> Mentorship Requests</a>
+                <a href="#" data-section="forum"><i class="fas fa-comments"></i> Discussion Forum</a>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="btn-logout"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            <!-- Overview -->
+            <div class="dashboard-section active" id="overview">
+                <div class="dashboard-header">
+                    <div>
+                        <h1>Welcome back, Alumni!</h1>
+                        <p>Give back to your alma mater and support the next generation</p>
+                    </div>
+                    <div class="header-actions">
+                        <img src="https://ui-avatars.com/api/?name=Michael+Chen&background=8b5cf6&color=fff" alt="Profile" class="user-avatar">
+                    </div>
+                </div>
+
+                <div class="toggle-switch">
+                    <label for="mentorshipToggle">Available for Mentorship</label>
+                    <label class="switch">
+                        <input type="checkbox" id="mentorshipToggle" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon purple"><i class="fas fa-inbox"></i></div>
+                        <div class="stat-info">
+                            <h3>5</h3>
+                            <p>Pending Requests</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon cyan"><i class="fas fa-briefcase"></i></div>
+                        <div class="stat-info">
+                            <h3>3</h3>
+                            <p>Active Job Posts</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon green"><i class="fas fa-users"></i></div>
+                        <div class="stat-info">
+                            <h3>12</h3>
+                            <p>Students Mentored</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon orange"><i class="fas fa-comments"></i></div>
+                        <div class="stat-info">
+                            <h3>28</h3>
+                            <p>Forum Replies</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <div class="profile-summary" id="profileSummary">
+                            <p class="empty-state">Loading profile...</p>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h2>Recent Mentorship Requests</h2>
+                            <a href="#" onclick="document.querySelector('[data-section=requests]').click(); return false;">View All</a>
+                        </div>
+                        <div class="card-body request-list" id="overviewRequests">
+                            <p class="empty-state">Loading requests...</p>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h2>Your Job Postings</h2>
+                            <a href="#" onclick="document.querySelector('[data-section=post-job]').click(); return false;">Post New</a>
+                        </div>
+                        <div class="card-body job-list" id="overviewMyJobs">
+                            <p class="empty-state">Loading jobs...</p>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h2>Forum Activity</h2>
+                        </div>
+                        <div class="card-body forum-list" id="overviewForum">
+                            <p class="empty-state">Loading forum...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post Job -->
+            <div class="dashboard-section" id="post-job">
+                <div class="dashboard-header">
+                    <div>
+                        <h1>Post a Job Opportunity</h1>
+                        <p>Share internships and job openings with students</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-card" style="max-width: 640px;">
+                    <div class="card-body">
+                        <form class="post-form" id="postJobForm">
+                            <div class="form-group">
+                                <label>Job Title</label>
+                                <input type="text" name="title" placeholder="e.g. Software Engineering Intern" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Company</label>
+                                <input type="text" name="company" placeholder="e.g. Google" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Location</label>
+                                <input type="text" name="location" placeholder="e.g. Mountain View, CA" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Job Type</label>
+                                <select name="jobType" required>
+                                    <option value="">Select type</option>
+                                    <option value="internship">Internship</option>
+                                    <option value="full-time">Full-time</option>
+                                    <option value="part-time">Part-time</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea name="description" placeholder="Describe the role, requirements, and how to apply..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn-auth" style="margin-top: 8px;">Post Job</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mentorship Requests -->
+            <div class="dashboard-section" id="requests">
+                <div class="dashboard-header">
+                    <div>
+                        <h1>Mentorship Requests</h1>
+                        <p>Review and respond to student mentorship requests</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-body request-list" id="allRequests">
+                        <p class="empty-state">Loading requests...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Forum -->
+            <div class="dashboard-section" id="forum">
+                <div class="dashboard-header">
+                    <div>
+                        <h1>Discussion Forum</h1>
+                        <p>Share your expertise and engage with students</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="dashboard-card full-width-card">
+                        <div class="card-header">
+                            <h2>Share Advice</h2>
+                        </div>
+                        <div class="card-body">
+                            <form class="post-form" id="forumForm">
+                                <textarea placeholder="Share career advice, answer questions, or start a discussion..." required></textarea>
+                                <button type="submit" class="btn-sm btn-sm-primary" style="align-self: flex-start; padding: 10px 20px;">Post</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card full-width-card">
+                        <div class="card-header">
+                            <h2>Active Discussions</h2>
+                        </div>
+                        <div class="card-body forum-list" id="allForum">
+                            <p class="empty-state">Loading discussions...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <button class="mobile-sidebar-toggle" aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+
+    <script src="portal-api.js"></script>
+    <script src="portal-script.js"></script>
+    <script src="portal-dashboard.js"></script>
+</body>
+</html>
